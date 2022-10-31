@@ -176,14 +176,14 @@ const splitEnd = (log) => {
 const getStart = (log) => {
   let firstLine = log[0];
 
-  if (firstLine.includes("] You say, 'mmbz START'")) {
+  if (firstLine && firstLine.includes("] You say, 'mmbz START'")) {
     return firstLine;
   } else return null;
 };
 
 const getStop = (log) => {
   let lastLine = log[log.length - 1];
-  if (lastLine.includes("] You say, 'mmbz STOP'")) {
+  if (lastLine && lastLine.includes("] You say, 'mmbz STOP'")) {
     return lastLine;
   } else return null;
 };
