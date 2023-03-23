@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const port = 8080;
-const db = require("../database/index.js");
+const db = require("./database/index.js");
 const fs = require("fs").promises;
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -38,9 +38,8 @@ app.use(express.static("build"));
 
 app.get("/", (req, resp) => {
   // HANDLE THE REQUEST HERE
-  console.log("dirname: " + __dirname);
   resp.sendFile(
-    getDir() + "../public/index.html",
+    getDir() + "/public/index.html",
     /*respHttpOptions,*/ (err) => {
       // SEND INDEX.HTML INSIDE PUBLIC DIRECTORY
       if (!err) console.log(sucL(`Served index.html`));
