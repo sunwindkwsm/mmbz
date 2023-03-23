@@ -54,3 +54,10 @@ app.listen(port, () => {
 });
 
 // await exec(["npm run start"]);
+function getDir() {
+  if (process.pkg) {
+    return path.resolve(process.execPath + "/..");
+  } else {
+    return path.join(require.main ? require.main.path : process.cwd());
+  }
+}
