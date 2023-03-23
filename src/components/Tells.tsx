@@ -12,7 +12,7 @@ export const Tells: FC<TellsProps> = ({ nonBids, getTimeStamp }) => (
     <div className="blackPurple padding16">
       {nonBids.map((nonBid, i) => (
         <div
-          key={nonBid.date + nonBid.name + nonBid.tell}
+          key={nonBid.date + nonBid.name + nonBid.tell + i}
           style={{ display: "flex", justifyContent: "space-between" }}
         >
           <div key={i} className="">

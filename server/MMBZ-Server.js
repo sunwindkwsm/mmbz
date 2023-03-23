@@ -40,7 +40,7 @@ app.get("/", (req, resp) => {
   // HANDLE THE REQUEST HERE
   console.log("dirname: " + __dirname);
   resp.sendFile(
-    "index.html",
+    getDir() + "../public/index.html",
     /*respHttpOptions,*/ (err) => {
       // SEND INDEX.HTML INSIDE PUBLIC DIRECTORY
       if (!err) console.log(sucL(`Served index.html`));

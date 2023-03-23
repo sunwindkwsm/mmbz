@@ -23,7 +23,7 @@ export const Bids: FC<BidsProps> = ({ bids, getTimeStamp, start, stop }) => (
         <tbody>
           {bids.map((bid, i) => (
             <tr
-              key={bid.date + bid.name + bid.bid}
+              key={bid.date + bid.name + bid.bid + i}
               style={{
                 color: getColor(bid.bid, bid.officer),
                 backgroundColor: bid.officer ? "#222222" : "",
