@@ -38,6 +38,7 @@ app.use(express.static("build"));
 
 app.get("/", (req, resp) => {
   // HANDLE THE REQUEST HERE
+  console.log("dirname: " + __dirname);
   resp.sendFile(
     "index.html",
     /*respHttpOptions,*/ (err) => {
