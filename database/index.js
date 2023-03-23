@@ -3,18 +3,14 @@ const fs = require("fs").promises;
 const path = require("path");
 
 const getDir = async () => {
-  return await fs.readFile(
-    __dirname + "../../path.txt",
-    "utf8",
-    (err, data) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-
-      return data;
+  return await fs.readFile("./path.txt", "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+      return;
     }
-  );
+
+    return data;
+  });
 };
 
 const getFile = async (dir) => {
