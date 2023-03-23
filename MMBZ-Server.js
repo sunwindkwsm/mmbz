@@ -8,8 +8,6 @@ const path = require("path");
 const bodyParser = require("body-parser");
 // const { exec } = require("pkg");
 
-console.log("DIR: ", getDir());
-
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -41,7 +39,7 @@ app.use(express.static("build"));
 app.get("/", (req, resp) => {
   // HANDLE THE REQUEST HERE
   resp.sendFile(
-    getDir() + "/index.html",
+    "index.html",
     /*respHttpOptions,*/ (err) => {
       // SEND INDEX.HTML INSIDE PUBLIC DIRECTORY
       if (!err) console.log(sucL(`Served index.html`));
@@ -55,11 +53,3 @@ app.listen(port, () => {
 });
 
 // await exec(["npm run start"]);
-
-function getDir() {
-  if (process.pkg) {
-    return path.resolve(process.execPath + "/..");
-  } else {
-    return path.join(require.main ? require.main.path : process.cwd());
-  }
-}
