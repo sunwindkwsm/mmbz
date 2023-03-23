@@ -39,7 +39,7 @@ app.use(express.static("build"));
 app.get("/", (req, resp) => {
   // HANDLE THE REQUEST HERE
   resp.sendFile(
-    "index.html",
+    path.join(__dirname + "index.html"),
     /*respHttpOptions,*/ (err) => {
       // SEND INDEX.HTML INSIDE PUBLIC DIRECTORY
       if (!err) console.log(sucL(`Served index.html`));
